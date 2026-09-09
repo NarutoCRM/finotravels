@@ -1,77 +1,91 @@
 function AboutSection() {
   return (
-    <section id="about" className="section-padding bg-white">
+    <section className="bg-[#f8faff] py-14 md:py-20">
       <div className="container-main">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
 
-          <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-widest text-primary">
-              About FinoTravels
+        <div className="mx-auto max-w-4xl">
+          
+          <p className="mb-2 text-xs font-extrabold uppercase tracking-[2px] text-primary">
+            About FinoTravels
+          </p>
+
+          <h2 className="text-3xl font-black text-dark md:text-4xl">
+            FinoTravels — Your Travel Partner for Easy Flight Booking
+          </h2>
+
+          <p className="mt-5 text-sm leading-7 text-gray-600 md:text-base">
+            Planning a flight should not feel complicated. At FinoTravels,
+            we help travelers explore available airfare and flight options
+            for domestic and international journeys. From choosing your
+            destination to reviewing different itineraries, our goal is
+            to make the search and booking experience easier to navigate.
+          </p>
+
+          <div className="mt-9">
+            <h3 className="text-xl font-black text-dark">
+              Who We Are
+            </h3>
+
+            <p className="mt-4 text-sm leading-7 text-gray-600 md:text-base">
+              FinoTravels is a travel-focused platform operated by
+              TravelFirst LLC. We provide travelers with a convenient
+              way to explore available flight options based on their
+              destinations, travel dates, and preferred itinerary.
             </p>
 
-            <h2 className="text-3xl font-black leading-tight text-primary-dark md:text-4xl">
-              Your Ultimate Partner
-              <br />
-              For Reliable Travel
-            </h2>
-
-            <p className="mt-5 leading-7 text-gray-600">
-              At FinoTravels, we make travel simple, affordable,
-              and stress-free. Whether you are traveling for
-              business, family, or a special getaway, our team
-              is here to help you plan your journey.
+            <p className="mt-4 text-sm leading-7 text-gray-600 md:text-base">
+              Whether you're arranging a business trip, visiting family,
+              planning a vacation, or booking a last-minute journey,
+              you can search for flights that match your travel requirements.
             </p>
-
-            <p className="mt-4 leading-7 text-gray-600">
-              From flights and hotels to customized travel
-              experiences, we provide convenient solutions
-              designed around your plans and budget.
-            </p>
-
-            <a
-              href="#contact"
-              className="mt-7 inline-flex rounded-xl bg-primary px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-200 transition hover:bg-primary-dark"
-            >
-              Learn More
-            </a>
           </div>
 
-          <div className="relative">
-            <div className="rounded-3xl bg-gradient-to-br from-primary to-[#004b9b] p-8 shadow-2xl">
-              <div className="rounded-2xl bg-white/10 p-8 backdrop-blur-sm">
-                <div className="mb-6 text-6xl">🌎</div>
+          <div className="mt-9">
+            <h3 className="text-xl font-black text-dark">
+              What We Offer
+            </h3>
 
-                <h3 className="text-2xl font-black text-white">
-                  Travel With Confidence
-                </h3>
+            <p className="mt-4 text-sm leading-7 text-gray-600">
+              FinoTravels helps travelers explore a range of flight
+              booking options, including:
+            </p>
 
-                <p className="mt-3 leading-7 text-blue-100">
-                  Expert assistance, easy booking and travel
-                  solutions designed to make every journey
-                  easier.
-                </p>
+            <ul className="mt-4 space-y-3 text-sm text-gray-600">
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                Domestic flights across the United States
+              </li>
 
-                <div className="mt-8 grid grid-cols-2 gap-3">
-                  <div className="rounded-xl bg-white/10 p-4">
-                    <p className="text-2xl font-black text-white">
-                      24/7
-                    </p>
-                    <p className="text-xs text-blue-100">
-                      Travel Support
-                    </p>
-                  </div>
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                International flight options
+              </li>
 
-                  <div className="rounded-xl bg-white/10 p-4">
-                    <p className="text-2xl font-black text-white">
-                      Easy
-                    </p>
-                    <p className="text-xs text-blue-100">
-                      Booking
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                One-way and round-trip flights
+              </li>
+
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                Business class and first class options
+              </li>
+
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                Last-minute flight searches
+              </li>
+
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                Different travel dates, routes, and schedules
+              </li>
+
+              <li className="flex gap-3">
+                <span className="text-primary">✓</span>
+                Phone assistance for flight booking inquiries
+              </li>
+            </ul>
           </div>
 
         </div>

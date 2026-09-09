@@ -1,188 +1,110 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-
-const navItems = [
-  "Deals",
-  "Destinations",
-  "About",
-  "Contact",
-];
-
 function Header() {
-  const [mobileMenu, setMobileMenu] = useState(false);
-  const [travelOpen, setTravelOpen] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [travel, setTravel] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
       <div className="container-main">
-        <div className="flex h-[76px] items-center justify-between">
+        <div className="flex h-[72px] items-center justify-between">
 
-          {/* Logo */}
-          <a
-            href="/"
-            className="flex items-center gap-2"
-          >
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary text-white shadow-sm">
-              <span className="text-xl">✈</span>
+          <Link to="/" className="flex items-center gap-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl text-white">
+              ✈
             </div>
 
-            <div className="leading-none">
-              <div className="text-xl font-extrabold tracking-tight text-primary-dark">
+            <div>
+              <div className="text-xl font-extrabold text-dark">
                 Fino<span className="text-primary">Travels</span>
               </div>
-
-              <div className="mt-1 text-[9px] font-semibold uppercase tracking-[2px] text-gray-400">
+              <div className="text-[9px] uppercase tracking-widest text-gray-400">
                 Travel With Confidence
               </div>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden items-center gap-7 lg:flex">
+            <div className="relative">
+              <button
+                onClick={() => setTravel(!travel)}
+                className="text-sm font-semibold text-gray-700 hover:text-primary"
+              >
+                Travel More ▾
+              </button>
 
-  <div className="relative">
-    <button
-      onClick={() => setTravelOpen(!travelOpen)}
-      className="flex items-center gap-1 text-sm font-semibold text-gray-700 transition hover:text-primary"
-    >
-      Travel More
-      <span className="text-xs">⌄</span>
-    </button>
+              {travel && (
+                <div className="absolute left-0 top-9 w-44 rounded-xl border bg-white p-2 shadow-xl">
+                  <Link className="block rounded-lg px-4 py-2 hover:bg-light-blue" to="/flights">
+                    Flights
+                  </Link>
+                  <Link className="block rounded-lg px-4 py-2 hover:bg-light-blue" to="/hotels">
+                    Hotels
+                  </Link>
+                  <Link className="block rounded-lg px-4 py-2 hover:bg-light-blue" to="/cruise">
+                    Cruise
+                  </Link>
+                  <Link className="block rounded-lg px-4 py-2 hover:bg-light-blue" to="/car-rental">
+                    Car
+                  </Link>
+                </div>
+              )}
+            </div>
 
-    {travelOpen && (
-      <div className="absolute left-0 top-full mt-4 w-48 overflow-hidden rounded-xl border border-gray-100 bg-white p-2 shadow-xl">
+            <Link to="/deals" className="text-sm font-semibold hover:text-primary">
+              Deals
+            </Link>
 
-        <Link
-          to="/flights"
-          className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-light-blue hover:text-primary"
-        >
-          Flights
-        </Link>
+            <Link to="/destinations" className="text-sm font-semibold hover:text-primary">
+              Destinations
+            </Link>
 
-        <Link
-          to="/hotels"
-          className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-light-blue hover:text-primary"
-        >
-          Hotels
-        </Link>
+            <Link to="/about" className="text-sm font-semibold hover:text-primary">
+              About
+            </Link>
 
-        <Link
-          to="/cruise"
-          className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-light-blue hover:text-primary"
-        >
-          Cruise
-        </Link>
+            <Link to="/contact" className="text-sm font-semibold hover:text-primary">
+              Contact Us
+            </Link>
+          </nav>
 
-        <Link
-          to="/car-rental"
-          className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-700 hover:bg-light-blue hover:text-primary"
-        >
-          Car Rental
-        </Link>
-
-      </div>
-    )}
-  </div>
-
-  <Link
-    to="/deals"
-    className="text-sm font-semibold text-gray-700 hover:text-primary"
-  >
-    Deals
-  </Link>
-
-  <Link
-    to="/destinations"
-    className="text-sm font-semibold text-gray-700 hover:text-primary"
-  >
-    Destinations
-  </Link>
-
-  <Link
-    to="/about"
-    className="text-sm font-semibold text-gray-700 hover:text-primary"
-  >
-    About
-  </Link>
-
-  <Link
-    to="/contact"
-    className="text-sm font-semibold text-gray-700 hover:text-primary"
-  >
-    Contact
-  </Link>
-
-</nav>
-
-          {/* Call Button */}
           <a
             href="tel:+18557502746"
-            className="hidden items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-bold text-white shadow-md shadow-blue-200 transition hover:bg-primary-dark md:flex"
+            className="hidden rounded-full bg-primary px-5 py-3 text-sm font-bold text-white hover:bg-dark md:block"
           >
-            <span>☎</span>
-            <span>(855) 750-2746</span>
+            ☎ (855) 750-2746
           </a>
 
-          {/* Mobile Button */}
           <button
-            onClick={() => setMobileMenu(!mobileMenu)}
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-light-blue text-primary lg:hidden"
+            onClick={() => setMenu(!menu)}
+            className="rounded-lg bg-light-blue px-3 py-2 text-xl text-primary lg:hidden"
           >
-            <span className="text-2xl">
-              {mobileMenu ? "×" : "☰"}
-            </span>
+            {menu ? "×" : "☰"}
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenu && (
-          <div className="border-t border-gray-100 py-5 lg:hidden">
+        {menu && (
+          <div className="border-t py-4 lg:hidden">
             <div className="flex flex-col gap-1">
-
-              <button
-                onClick={() => setTravelOpen(!travelOpen)}
-                className="flex items-center justify-between rounded-lg px-4 py-3 text-left font-semibold text-gray-700 hover:bg-light-blue"
-              >
-                Travel More
-                <span>⌄</span>
-              </button>
-
-              {travelOpen && (
-                <div className="ml-4 border-l-2 border-primary/20 pl-3">
-                  {[
-                    "Flights",
-                    "Hotels",
-                    "Cruise",
-                    "Car Rental",
-                  ].map((item) => (
-                    <a
-                      key={item}
-                      href="#"
-                      className="block px-4 py-2 text-sm text-gray-600"
-                    >
-                      {item}
-                    </a>
-                  ))}
-                </div>
-              )}
-
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  onClick={() => setMobileMenu(false)}
-                  className="rounded-lg px-4 py-3 font-semibold text-gray-700 hover:bg-light-blue hover:text-primary"
-                >
-                  {item}
-                </a>
-              ))}
+              <Link onClick={() => setMenu(false)} to="/deals" className="rounded-lg px-4 py-3">
+                Deals
+              </Link>
+              <Link onClick={() => setMenu(false)} to="/destinations" className="rounded-lg px-4 py-3">
+                Destinations
+              </Link>
+              <Link onClick={() => setMenu(false)} to="/about" className="rounded-lg px-4 py-3">
+                About
+              </Link>
+              <Link onClick={() => setMenu(false)} to="/contact" className="rounded-lg px-4 py-3">
+                Contact Us
+              </Link>
 
               <a
                 href="tel:+18557502746"
-                className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-primary px-5 py-3 font-bold text-white"
+                className="mt-2 rounded-lg bg-primary px-4 py-3 text-center font-bold text-white"
               >
-                ☎ Call (855) 750-2746
+                ☎ (855) 750-2746
               </a>
             </div>
           </div>

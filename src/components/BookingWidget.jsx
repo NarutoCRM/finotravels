@@ -1,118 +1,104 @@
 import { useState } from "react";
 
-const tabs = [
-  {
-    name: "Tours",
-    icon: "🧳",
-  },
-  {
-    name: "Hotels",
-    icon: "🏨",
-  },
-  {
-    name: "Visa",
-    icon: "📄",
-  },
-  {
-    name: "Experience",
-    icon: "✨",
-  },
-];
+const tabs = ["Tours"];
 
 function BookingWidget() {
-  const [activeTab, setActiveTab] = useState("Tours");
+  const [active, setActive] = useState("Tours");
 
   return (
-    <div className="mx-auto w-full max-w-6xl rounded-2xl bg-white p-3 shadow-2xl shadow-blue-900/15 sm:p-5">
-
+    <div className="w-full rounded-2xl bg-white p-3 shadow-xl sm:p-4">
       {/* Tabs */}
-      <div className="mb-4 flex gap-2 overflow-x-auto pb-1">
-        {tabs.map((tab) => (
-          <button
-            key={tab.name}
-            onClick={() => setActiveTab(tab.name)}
-            className={`flex min-w-fit items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-bold transition sm:px-5 ${
-              activeTab === tab.name
-                ? "bg-primary text-white shadow-md"
-                : "bg-gray-50 text-gray-600 hover:bg-light-blue"
-            }`}
-          >
-            <span>{tab.icon}</span>
-            {tab.name}
-          </button>
-        ))}
+      <div className="mb-4 overflow-x-auto pb-1">
+        <div className="flex min-w-max gap-2">
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              type="button"
+              onClick={() => setActive(tab)}
+              className={`flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-bold transition sm:text-sm ${active === tab
+                  ? "bg-primary text-white"
+                  : "bg-gray-50 text-gray-600 hover:bg-light-blue"
+                }`}
+            >
+              {tab === "Tours" && "🧳"}
+              
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
-      {/* Fields */}
-      <div className="grid gap-3 md:grid-cols-3">
-
-        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-          <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-gray-400">
+      {/* Search Fields */}
+      <div className="grid gap-3 md:grid-cols-[1.3fr_1.3fr_1.3fr_auto]">
+        {/* Destination */}
+        <div className="min-w-0 rounded-lg border border-gray-300 px-3 py-2.5">
+          <label className="block text-[9px] font-bold uppercase tracking-wide text-gray-400">
             Destination
           </label>
 
-          <div className="flex items-center gap-2">
-            <span className="text-primary">⌖</span>
+          <div className="mt-1 flex items-center gap-2">
+            <span className="shrink-0 text-sm text-primary">⌖</span>
 
             <input
               type="text"
+              className="min-w-0 w-full bg-transparent text-sm text-gray-700 outline-none placeholder:text-gray-400"
               placeholder="Select destination"
-              className="w-full bg-transparent text-sm font-semibold text-gray-700 outline-none placeholder:text-gray-400"
             />
           </div>
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-          <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-gray-400">
-            Travel Date
+        {/* Date */}
+        <div className="min-w-0 rounded-lg border border-gray-300 px-3 py-2.5">
+          <label className="block text-[9px] font-bold uppercase tracking-wide text-gray-400">
+            Date
           </label>
 
-          <div className="flex items-center gap-2">
-            <span className="text-primary">▣</span>
+          <div className="mt-1 flex items-center gap-2">
+            <span className="shrink-0 text-sm text-primary">▣</span>
 
             <input
               type="date"
-              className="w-full bg-transparent text-sm font-semibold text-gray-700 outline-none"
+              className="min-w-0 w-full bg-transparent text-sm text-gray-700 outline-none"
             />
           </div>
         </div>
 
-        <div className="rounded-xl border border-gray-200 bg-white px-4 py-3">
-          <label className="mb-1 block text-[10px] font-bold uppercase tracking-wider text-gray-400">
-            Travel Type
+        {/* Tour Type */}
+        <div className="min-w-0 rounded-lg border border-gray-300 px-3 py-2.5">
+          <label className="block text-[9px] font-bold uppercase tracking-wide text-gray-400">
+            Tour Type
           </label>
 
-          <div className="flex items-center gap-2">
-            <span className="text-primary">☰</span>
+          <div className="mt-1 flex items-center gap-2">
+            <span className="shrink-0 text-sm text-primary">☰</span>
 
-            <select className="w-full bg-transparent text-sm font-semibold text-gray-700 outline-none">
-              <option>Select tour type</option>
-              <option>Family Vacation</option>
-              <option>Honeymoon</option>
-              <option>Business Travel</option>
-              <option>Adventure</option>
-              <option>Luxury Travel</option>
+            <select className="min-w-0 w-full bg-transparent text-sm text-gray-700 outline-none">
+              <option>Select</option>
+              <option>Domestic Flight</option>
+              <option>International Flight</option>
+              <option>One Way</option>
+              <option>Round Trip</option>
             </select>
           </div>
         </div>
 
-      </div>
-
-      {/* Search */}
-      <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-
-        <p className="text-xs text-gray-500">
-          Can't find what you're looking for?
-          <span className="ml-1 font-bold text-primary">
-            Create a custom itinerary
-          </span>
-        </p>
-
+        {/* Search Button */}
         <button
-          className="rounded-xl bg-primary px-8 py-3 text-sm font-extrabold text-white shadow-lg shadow-blue-200 transition hover:bg-primary-dark"
+          type="button"
+          className="min-h-[46px] w-full rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-dark md:min-w-[135px]"
         >
           🔍 SEARCH
         </button>
+      </div>
+
+      {/* Custom Itinerary */}
+      <div className="mt-3">
+        <p className="text-center text-[11px] leading-5 text-gray-500 sm:text-left">
+          Can't find what you're looking for?
+          <span className="ml-1 font-bold text-primary">
+            Create your Custom Itinerary
+          </span>
+        </p>
       </div>
     </div>
   );

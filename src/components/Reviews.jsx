@@ -1,78 +1,76 @@
 const reviews = [
   {
-    name: "James",
-    text: "The service was well-organized and everything went smoothly. I would definitely recommend FinoTravels.",
+    name: "Michael R.",
+    quote:
+      "Finding flight options was straightforward, and I was able to compare different schedules before making my reservation.",
   },
   {
-    name: "Sarah",
-    text: "The booking process was simple and the travel team was very helpful throughout our trip.",
+    name: "Sarah M.",
+    quote:
+      "The booking process was easy to follow. I appreciated being able to review different flight options for my trip.",
   },
   {
-    name: "Michael",
-    text: "Great experience from start to finish. The team helped us plan a wonderful vacation.",
+    name: "Jessica B.",
+    quote:
+      "I needed help with my travel plans and found the booking assistance useful. The process was simple and convenient.",
   },
 ];
 
 function Reviews() {
   return (
-    <section className="section-padding bg-[#f3f2ff]">
+    <section className="bg-light py-14 md:py-20">
       <div className="container-main">
 
-        <div className="mb-10 text-center">
-          <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
-            Traveler Reviews
+        <div className="mb-9 text-center">
+          <p className="text-xs font-extrabold uppercase tracking-[2px] text-primary">
+            Customer Reviews
           </p>
 
-          <h2 className="text-3xl font-black text-primary-dark md:text-4xl">
-            Hear It From Travelers
+          <h2 className="mt-2 text-3xl font-black text-dark md:text-4xl">
+            Real Experiences From Our Customers
           </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-gray-500">
-            We go beyond just booking trips — we create
-            unforgettable travel experiences.
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-500">
+            We value the experiences and feedback shared by travelers
+            who use FinoTravels for their flight-search and booking needs.
           </p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-3">
+
           {reviews.map((review) => (
             <div
               key={review.name}
               className="rounded-2xl bg-white p-6 shadow-sm"
             >
-              <div className="mb-4 flex items-center gap-3">
+
+              <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-full bg-light-blue font-black text-primary">
-                  {review.name[0]}
+                  {review.name.charAt(0)}
                 </div>
 
                 <div>
-                  <h3 className="font-extrabold text-gray-900">
+                  <h3 className="font-extrabold text-dark">
                     {review.name}
                   </h3>
 
                   <p className="text-xs text-gray-400">
-                    FinoTravels Traveler
+                    FinoTravels Customer
                   </p>
                 </div>
               </div>
 
-              <div className="mb-3 tracking-widest text-green-500">
+              <div className="mt-4 text-sm tracking-widest text-green">
                 ★★★★★
               </div>
 
-              <p className="text-sm leading-6 text-gray-600">
-                {review.text}
+              <p className="mt-4 text-sm leading-7 text-gray-600">
+                “{review.quote}”
               </p>
+
             </div>
           ))}
-        </div>
 
-        <div className="mt-8 text-center">
-          <span className="font-bold text-gray-700">
-            ⭐ 4.5
-          </span>
-          <span className="ml-2 text-sm text-gray-500">
-            Traveler Reviews
-          </span>
         </div>
 
       </div>

@@ -1,59 +1,86 @@
-const features = [
+const reasons = [
   {
+    number: "01",
     icon: "☎",
-    title: "Call Us 24 × 7",
-    text: "Our travel experts are available around the clock to help you.",
+    title: "Help When You Need It",
+    text: "Have questions about your flight options? Our team is available to provide booking assistance when you need it.",
   },
   {
+    number: "02",
     icon: "✈",
-    title: "We Know Travel",
-    text: "Get expert guidance from experienced travel specialists.",
+    title: "Easy to Explore",
+    text: "Search and compare available flights based on your destination, dates, and preferred travel options.",
   },
   {
+    number: "03",
     icon: "☝",
-    title: "Easy Booking",
-    text: "Simple and convenient booking for your next journey.",
+    title: "Simple Booking",
+    text: "Review your itinerary details and complete your flight reservation through a straightforward booking process.",
   },
   {
-    icon: "G",
-    title: "Google Rating",
-    text: "Trusted service and great experiences from our travelers.",
+    number: "04",
+    icon: "↔",
+    title: "Flexible Flight Choices",
+    text: "Explore available one-way, round-trip, domestic, and international flight options in one convenient place.",
   },
 ];
 
 function WhyChooseUs() {
   return (
-    <section className="section-padding bg-white">
+    <section className="bg-white">
+      
       <div className="container-main">
-        <div className="mb-10 text-center">
-          <p className="mb-2 text-sm font-bold uppercase tracking-widest text-primary">
-            Why Choose Us
-          </p>
-          <h2 className="text-3xl font-black text-primary-dark md:text-4xl">
-            Reasons to Book With FinoTravels
+
+        {/* Heading */}
+        <div className="mx-auto mb-10 max-w-3xl text-center mt-10" >
+
+
+          <h2 className="text-3xl font-black text-dark md:text-4xl">
+            Reasons To Book With FinoTravels
           </h2>
+
+          <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-gray-500">
+            We're here to make finding and booking your next
+            flight simple and convenient.
+          </p>
         </div>
 
+        {/* Cards */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
+
+          {reasons.map((reason) => (
             <div
-              key={feature.title}
-              className="group rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+              key={reason.number}
+              className="group relative overflow-hidden rounded-2xl border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-light-blue text-xl font-black text-primary transition group-hover:bg-primary group-hover:text-white">
-                {feature.icon}
+
+              {/* Number */}
+              <span className="absolute right-4 top-4 text-xs font-black text-gray-200">
+                {reason.number}
+              </span>
+
+              {/* Icon */}
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-light-blue text-xl text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-white">
+                {reason.icon}
               </div>
 
-              <h3 className="mb-2 font-extrabold text-gray-900">
-                {feature.title}
+              {/* Content */}
+              <h3 className="mt-5 text-lg font-extrabold text-dark">
+                {reason.title}
               </h3>
 
-              <p className="text-sm leading-6 text-gray-500">
-                {feature.text}
+              <p className="mt-3 text-sm leading-6 text-gray-500">
+                {reason.text}
               </p>
+
+              {/* Bottom line */}
+              <div className="mt-5 h-1 w-8 rounded-full bg-primary transition-all duration-300 group-hover:w-16" />
+
             </div>
           ))}
+
         </div>
+
       </div>
     </section>
   );

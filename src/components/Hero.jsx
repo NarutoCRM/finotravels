@@ -2,69 +2,67 @@ import BookingWidget from "./BookingWidget";
 
 function Hero() {
   return (
-    <section className="relative overflow-hidden">
-
-      {/* Hero Background */}
-      <div className="relative min-h-[620px] bg-gradient-to-br from-[#062d4f] via-[#0870a0] to-[#1077e3]">
-
-        {/* Decorative circles */}
-        <div className="absolute -left-32 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
-        <div className="absolute right-0 top-0 h-96 w-96 rounded-full bg-cyan-300/10 blur-3xl" />
-
-        {/* Airplane decoration */}
-        <div className="absolute right-[8%] top-[15%] hidden rotate-[-15deg] text-[120px] opacity-10 lg:block">
-          ✈
-        </div>
-
-        <div className="container-main relative z-10">
-
-          <div className="flex min-h-[620px] flex-col items-center justify-center pb-28 pt-20 text-center">
-
-            <span className="mb-5 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-xs font-bold uppercase tracking-[2px] text-white backdrop-blur-sm">
-              Explore The World With FinoTravels
-            </span>
-
-            <h1 className="max-w-4xl text-4xl font-black leading-tight text-white sm:text-5xl md:text-6xl">
-              Ready to Start
-              <br />
-              <span className="text-blue-200">
-                Your Journey?
-              </span>
+    <section className="relative overflow-hidden bg-[#075b79]">
+      <div
+        className="relative min-h-[50px] bg-cover bg-center sm:min-h-[520px] md:min-h-[450px]"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(0,45,65,.50),rgba(0,45,65,.50)), url('/images/hero-travel.jpg')",
+        }}
+      >
+        <div className="container-main">
+          {/* Hero Content */}
+          <div className="flex min-h-[430px] flex-col items-center justify-center px-2 pb-10  text-center text-white sm:min-h-[430px] sm:pb-16 md:min-h-[500px]">
+            <h1 className="max-w-4xl text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
+              Ready to Start Your Journey?
             </h1>
 
-            <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:text-lg">
-              Book your next adventure with confidence.
-              Our travel experts are here to help you
-              plan an unforgettable journey.
+            <p className="mt-3 max-w-2xl text-sm font-medium leading-6 sm:text-base sm:leading-7">
+              Book your next flight with confidence. Our expert team is here
+              to help you 24/7.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            {/* Buttons */}
+            <div className="mt-6 flex w-full max-w-sm flex-col gap-3 sm:max-w-none sm:flex-row sm:justify-center">
               <a
-                href="#deals"
-                className="rounded-xl bg-white px-7 py-3.5 text-sm font-extrabold text-primary shadow-xl transition hover:-translate-y-1"
+                href="#booking"
+                className="rounded-lg bg-green px-6 py-3 text-sm font-bold text-white transition hover:bg-green/90"
               >
-                Explore Deals
+                Book Your Flight Now
               </a>
 
               <a
                 href="tel:+18557502746"
-                className="rounded-xl border border-white/30 bg-white/10 px-7 py-3.5 text-sm font-extrabold text-white backdrop-blur-sm transition hover:bg-white/20"
+                className="rounded-lg border border-white bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/15"
               >
-                ☎ Call Us Now
+                ☎ Call (855) 750-2746
               </a>
             </div>
-
           </div>
-        </div>
 
-        {/* Booking Widget */}
-        <div className="absolute bottom-0 left-0 right-0 translate-y-[48%] px-4">
-          <BookingWidget />
+          {/* Booking Widget */}
+          <div
+            id="booking"
+            className="
+              relative z-20 mx-auto
+              w-[calc(100%-8px)]
+              max-w-[1120px]
+              sm:w-[calc(100%-16px)]
+              md:absolute
+              md:bottom-[-5px]
+              md:left-1/2
+              md:w-[calc(100%-24px)]
+              md:-translate-x-1/2
+            "
+          >
+            <BookingWidget />
+          </div>
         </div>
       </div>
 
-      {/* Space for overlapping booking widget */}
-      <div className="h-52 bg-white md:h-44" />
+      {/* Space below booking widget */}
+      <div className="hidden h-[100px] md:block" />
+      <div className="h-6 md:hidden" />
     </section>
   );
 }
