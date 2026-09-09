@@ -16,12 +16,12 @@ function BookingWidget() {
               type="button"
               onClick={() => setActive(tab)}
               className={`flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-bold transition sm:text-sm ${active === tab
-                  ? "bg-primary text-white"
-                  : "bg-gray-50 text-gray-600 hover:bg-light-blue"
+                ? "bg-primary text-white"
+                : "bg-gray-50 text-gray-600 hover:bg-light-blue"
                 }`}
             >
-              {tab === "Tours" && "🧳"}
-              
+              {tab === "Tours" && "✈"}
+
               {tab}
             </button>
           ))}
