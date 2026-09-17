@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { formatPhoneNumber } from "../utils/helper";
+import { appData } from "../data";
 
 function Footer() {
   return (
@@ -21,10 +23,10 @@ function Footer() {
 
             <div className="mt-5">
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="inline-flex items-center gap-2 text-sm font-bold text-white transition hover:text-primary"
               >
-                ☎ (855) 750-2746
+                ☎ {formatPhoneNumber(appData.phoneNumber)}
               </a>
             </div>
           </div>
@@ -35,28 +37,19 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link
-                  to="/flights"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/flights" className="transition hover:text-primary">
                   Flights
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/hotels"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/hotels" className="transition hover:text-primary">
                   Hotels
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/cruise"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/cruise" className="transition hover:text-primary">
                   Cruise
                 </Link>
               </li>
@@ -87,10 +80,7 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link
-                  to="/deals"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/deals" className="transition hover:text-primary">
                   All Deals
                 </Link>
               </li>
@@ -148,19 +138,13 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link
-                  to="/about"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/about" className="transition hover:text-primary">
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link
-                  to="/contact"
-                  className="transition hover:text-primary"
-                >
+                <Link to="/contact" className="transition hover:text-primary">
                   Contact Us
                 </Link>
               </li>
@@ -245,19 +229,19 @@ function Footer() {
               <div className="mt-3 space-y-2 text-sm text-white/60">
                 <p>
                   <a
-                    href="mailto:contact@finotravels.com"
+                    href={`mailto:${appData.email}`}
                     className="transition hover:text-primary"
                   >
-                    contact@finotravels.com
+                    {appData.email}
                   </a>
                 </p>
 
                 <p>
                   <a
-                    href="tel:+18557502746"
+                    href={`tel:+${appData.phoneNumber}`}
                     className="transition hover:text-primary"
                   >
-                    (855) 750-2746
+                    {formatPhoneNumber(appData.phoneNumber)}
                   </a>
                 </p>
               </div>
@@ -272,8 +256,8 @@ function Footer() {
             availability, schedules, fares, and other travel information are
             subject to change and may vary based on airline inventory, travel
             dates, demand, and other conditions. Displayed information does not
-            guarantee availability or a particular price until a reservation
-            is successfully completed and confirmed. Please review applicable
+            guarantee availability or a particular price until a reservation is
+            successfully completed and confirmed. Please review applicable
             airline terms, fare conditions, baggage policies, cancellation
             rules, and other restrictions before booking.
           </p>
@@ -302,17 +286,11 @@ function Footer() {
               Terms
             </Link>
 
-            <Link
-              to="/cookie-policy"
-              className="transition hover:text-primary"
-            >
+            <Link to="/cookie-policy" className="transition hover:text-primary">
               Cookies
             </Link>
 
-            <Link
-              to="/disclaimer"
-              className="transition hover:text-primary"
-            >
+            <Link to="/disclaimer" className="transition hover:text-primary">
               Disclaimer
             </Link>
           </div>
@@ -322,4 +300,4 @@ function Footer() {
   );
 }
 
-export default Footer
+export default Footer;

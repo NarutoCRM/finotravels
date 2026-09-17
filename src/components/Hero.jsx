@@ -1,3 +1,5 @@
+import { appData } from "../data";
+import { formatPhoneNumber } from "../utils/helper";
 import BookingWidget from "./BookingWidget";
 
 function Hero() {
@@ -18,8 +20,8 @@ function Hero() {
             </h1>
 
             <p className="mt-3 max-w-2xl text-sm font-medium leading-6 sm:text-base sm:leading-7">
-              Book your next flight with confidence. Our expert team is here
-              to help you 24/7.
+              Book your next flight with confidence. Our expert team is here to
+              help you 24/7.
             </p>
 
             {/* Buttons */}
@@ -32,10 +34,10 @@ function Hero() {
               </a>
 
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="rounded-lg border border-white bg-white/5 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/15"
               >
-                ☎ Call (855) 750-2746
+                ☎ Call {formatPhoneNumber(appData.phoneNumber)}
               </a>
             </div>
           </div>

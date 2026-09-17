@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { appData } from "../data";
 
 const faqs = [
   {
@@ -18,8 +19,7 @@ const faqs = [
   },
   {
     question: "Can I get help with my flight booking?",
-    answer:
-      "Yes. If you prefer assistance while reviewing or booking a flight, you can contact FinoTravels at our ☎ (855) 750-2746.",
+    answer: `Yes. If you prefer assistance while reviewing or booking a flight, you can contact FinoTravels at our ☎ ${appData.phoneNumber}.`,
   },
   {
     question: "Do flight prices change?",
@@ -34,9 +34,7 @@ function FAQ() {
   return (
     <section className="bg-white py-14 md:py-20">
       <div className="container-main">
-
         <div className="mx-auto max-w-3xl">
-
           <div className="mb-8 text-center">
             <p className="text-xs font-extrabold uppercase tracking-[2px] text-primary">
               FAQs
@@ -47,8 +45,8 @@ function FAQ() {
             </h2>
 
             <p className="mt-3 text-sm text-gray-500">
-              We're committed to offering more than just products—
-              we provide exceptional experiences.
+              We're committed to offering more than just products— we provide
+              exceptional experiences.
             </p>
           </div>
 
@@ -62,9 +60,7 @@ function FAQ() {
                   className="overflow-hidden rounded-xl border border-gray-200 bg-white"
                 >
                   <button
-                    onClick={() =>
-                      setOpen(isOpen ? null : index)
-                    }
+                    onClick={() => setOpen(isOpen ? null : index)}
                     className="flex w-full items-center justify-between px-5 py-4 text-left text-sm font-bold text-dark"
                   >
                     <span>{faq.question}</span>
@@ -83,7 +79,6 @@ function FAQ() {
               );
             })}
           </div>
-
         </div>
       </div>
     </section>
