@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { formatPhoneNumber } from "../utils/helper";
+import { appData } from "../data";
 
 function DomesticFlightDeals() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -113,8 +115,7 @@ function DomesticFlightDeals() {
         <div
           className="absolute inset-0 bg-cover bg-center opacity-25"
           style={{
-            backgroundImage:
-              "url('/images/hero-travel.jpg')",
+            backgroundImage: "url('/images/hero-travel.jpg')",
           }}
         />
 
@@ -145,10 +146,10 @@ function DomesticFlightDeals() {
                 </a>
 
                 <a
-                  href="tel:+18557502746"
+                  href={`tel:+${appData.phoneNumber}`}
                   className="rounded-lg border border-white/40 bg-white/10 px-7 py-3 text-center text-sm font-bold text-white transition hover:bg-white hover:text-dark"
                 >
-                  ☎ (855) 750-2746
+                  ☎ {formatPhoneNumber(appData.phoneNumber)}
                 </a>
               </div>
             </div>
@@ -170,9 +171,9 @@ function DomesticFlightDeals() {
 
             <p className="mx-auto mt-5 max-w-3xl leading-7 text-gray-600">
               Comparing different flight options can help you make a more
-              informed travel decision. With FinoTravels, you can search
-              routes, compare available fares and schedules, and find an
-              itinerary that fits your travel plans.
+              informed travel decision. With FinoTravels, you can search routes,
+              compare available fares and schedules, and find an itinerary that
+              fits your travel plans.
             </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -256,8 +257,8 @@ function DomesticFlightDeals() {
 
               <p className="mt-5 leading-7 text-gray-600">
                 There is no guaranteed formula for finding the lowest fare, but
-                comparing different options may help you find a suitable
-                flight. Consider:
+                comparing different options may help you find a suitable flight.
+                Consider:
               </p>
 
               <div className="mt-7 space-y-4">
@@ -320,9 +321,7 @@ function DomesticFlightDeals() {
             {destinations.map((destination) => (
               <a
                 key={destination}
-                href={`/flights?destination=${encodeURIComponent(
-                  destination
-                )}`}
+                href={`/flights?destination=${encodeURIComponent(destination)}`}
                 className="rounded-xl border border-white/10 bg-white/5 p-5 text-center text-sm font-bold text-white transition hover:bg-primary"
               >
                 ✈ {destination}
@@ -430,16 +429,17 @@ function DomesticFlightDeals() {
               </h3>
 
               <p className="mt-5 leading-7 text-white/75">
-                Prefer personal assistance? Call (855) 750-2746 to discuss your
+                Prefer personal assistance? Call{" "}
+                {formatPhoneNumber(appData.phoneNumber)} to discuss your
                 preferred route, dates, and available flight options with our
                 travel team.
               </p>
 
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="mt-7 inline-flex rounded-lg bg-white px-6 py-3 text-sm font-bold text-dark transition hover:bg-primary hover:text-white"
               >
-                ☎ Call (855) 750-2746
+                ☎ Call {formatPhoneNumber(appData.phoneNumber)}
               </a>
             </div>
           </div>
@@ -474,9 +474,7 @@ function DomesticFlightDeals() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
 
-                <p className="mt-4 font-semibold text-dark">
-                  {benefit}
-                </p>
+                <p className="mt-4 font-semibold text-dark">{benefit}</p>
               </div>
             ))}
           </div>
@@ -508,9 +506,7 @@ function DomesticFlightDeals() {
                   >
                     <button
                       type="button"
-                      onClick={() =>
-                        setOpenFaq(isOpen ? null : index)
-                      }
+                      onClick={() => setOpenFaq(isOpen ? null : index)}
                       className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left"
                     >
                       <span className="font-bold text-dark">
@@ -547,8 +543,7 @@ function DomesticFlightDeals() {
               </h2>
 
               <p className="mt-2 text-sm text-white/80">
-                Explore available routes, fares, and schedules with
-                FinoTravels.
+                Explore available routes, fares, and schedules with FinoTravels.
               </p>
             </div>
 
@@ -561,10 +556,10 @@ function DomesticFlightDeals() {
               </a>
 
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="rounded-lg border border-white px-7 py-3 text-center text-sm font-bold text-white transition hover:bg-white hover:text-dark"
               >
-                ☎ (855) 750-2746
+                ☎ {formatPhoneNumber(appData.phoneNumber)}
               </a>
             </div>
           </div>

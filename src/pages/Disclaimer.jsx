@@ -1,3 +1,6 @@
+import { appData } from "../data";
+import { formatPhoneNumber } from "../utils/helper";
+
 function Disclaimer() {
   const List = ({ items }) => (
     <ul className="mt-4 space-y-2">
@@ -28,9 +31,7 @@ function Disclaimer() {
             FinoTravels
           </p>
 
-          <h1 className="text-4xl font-black md:text-5xl">
-            Disclaimer
-          </h1>
+          <h1 className="text-4xl font-black md:text-5xl">Disclaimer</h1>
 
           <p className="mt-4 max-w-3xl text-sm leading-7 text-white/80 md:text-base">
             Important information about the use of FinoTravels, travel
@@ -47,17 +48,17 @@ function Disclaimer() {
             <Section number="1" title="About the Information on FinoTravels">
               <p className="mt-4 text-gray-600">
                 The content and information available through FinoTravels are
-                provided for general travel information, booking assistance,
-                and customer support purposes. FinoTravels is operated by
+                provided for general travel information, booking assistance, and
+                customer support purposes. FinoTravels is operated by
                 TravelFirst LLC.
               </p>
 
               <p className="mt-4 text-gray-600">
                 We make reasonable efforts to keep information on our website,
                 including airfare options, pricing, availability, travel
-                details, and related content, useful and up to date. However,
-                we cannot guarantee that every piece of information will always
-                be complete, accurate, current, or free of errors.
+                details, and related content, useful and up to date. However, we
+                cannot guarantee that every piece of information will always be
+                complete, accurate, current, or free of errors.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -105,8 +106,8 @@ function Disclaimer() {
                 To the fullest extent allowed under applicable law, TravelFirst
                 LLC and its affiliates, employees, representatives, partners,
                 and service providers will not be liable for losses or damages
-                arising from your use of our website or services, including,
-                but not limited to:
+                arising from your use of our website or services, including, but
+                not limited to:
               </p>
 
               <List
@@ -162,8 +163,8 @@ function Disclaimer() {
             <Section number="5" title="Information Is Not Professional Advice">
               <p className="mt-4 text-gray-600">
                 Content published on FinoTravels is intended for general
-                informational purposes and should not be treated as
-                professional advice.
+                informational purposes and should not be treated as professional
+                advice.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -308,9 +309,7 @@ function Disclaimer() {
                 finalized.
               </p>
 
-              <p className="mt-4 text-gray-600">
-                Please keep in mind that:
-              </p>
+              <p className="mt-4 text-gray-600">Please keep in mind that:</p>
 
               <List
                 items={[
@@ -323,8 +322,8 @@ function Disclaimer() {
 
               <p className="mt-4 text-gray-600">
                 TravelFirst LLC does not guarantee that a fare or seat shown
-                during your search will still be available when you complete
-                the purchase.
+                during your search will still be available when you complete the
+                purchase.
               </p>
             </Section>
 
@@ -383,29 +382,23 @@ function Disclaimer() {
 
             {/* 12 Contact */}
             <section className="rounded-2xl bg-dark p-7 text-white md:p-9">
-              <h2 className="text-2xl font-bold">
-                12. Contact Information
-              </h2>
+              <h2 className="text-2xl font-bold">12. Contact Information</h2>
 
               <p className="mt-4 leading-7 text-white/80">
                 If you have questions or concerns regarding this Disclaimer or
-                the information provided through FinoTravels, you can contact
-                us using the details below:
+                the information provided through FinoTravels, you can contact us
+                using the details below:
               </p>
 
               <div className="mt-6 space-y-5">
                 <div>
                   <p className="text-sm font-bold text-primary">Company</p>
-                  <p className="mt-1 text-sm text-white/80">
-                    TravelFirst LLC
-                  </p>
+                  <p className="mt-1 text-sm text-white/80">TravelFirst LLC</p>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold text-primary">Brand</p>
-                  <p className="mt-1 text-sm text-white/80">
-                    FinoTravels
-                  </p>
+                  <p className="mt-1 text-sm text-white/80">FinoTravels</p>
                 </div>
 
                 <div>
@@ -422,20 +415,20 @@ function Disclaimer() {
                 <div>
                   <p className="text-sm font-bold text-primary">Email</p>
                   <a
-                    href="mailto:contact@finotravels.com"
+                    href={`mailto:${appData.email}`}
                     className="mt-1 inline-block text-sm text-white/80 transition hover:text-white"
                   >
-                    contact@finotravels.com
+                    {appData.email}
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold text-primary">Phone</p>
                   <a
-                    href="tel:+18557502746"
+                    href={`tel:+${appData.phoneNumber}`}
                     className="mt-1 inline-block text-sm font-semibold text-white transition hover:text-primary"
                   >
-                    ☎ (855) 750-2746
+                    ☎ {formatPhoneNumber(appData.phoneNumber)}
                   </a>
                 </div>
               </div>

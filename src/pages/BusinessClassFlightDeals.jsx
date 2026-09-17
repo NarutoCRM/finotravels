@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { formatPhoneNumber } from "../utils/helper";
+import { appData } from "../data";
 
 const destinations = [
   "New York",
@@ -59,8 +61,7 @@ const journeyOptions = [
 const faqs = [
   {
     question: "How can I book business class flights with FinoTravels?",
-    answer:
-      "Search your route and dates online, compare available options, and complete the applicable booking process. You can also call (855) 750-2746 for assistance.",
+    answer: `Search your route and dates online, compare available options, and complete the applicable booking process. You can also call ${appData.phoneNumber} for assistance.`,
   },
   {
     question: "Can I find affordable business class flights?",
@@ -93,9 +94,7 @@ function SectionTitle({ eyebrow, title, description }) {
         </p>
       )}
 
-      <h2 className="text-2xl font-black text-dark sm:text-3xl">
-        {title}
-      </h2>
+      <h2 className="text-2xl font-black text-dark sm:text-3xl">{title}</h2>
 
       {description && (
         <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
@@ -145,10 +144,10 @@ function BusinessClassFlightDeals() {
                 </a>
 
                 <a
-                  href="tel:+18557502746"
+                  href={`tel:+${appData.phoneNumber}`}
                   className="rounded-lg border border-white bg-white/10 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/20"
                 >
-                  ☎ Call (855) 750-2746
+                  ☎ Call {formatPhoneNumber(appData.phoneNumber)}
                 </a>
               </div>
             </div>
@@ -260,9 +259,9 @@ function BusinessClassFlightDeals() {
 
             <div className="rounded-2xl bg-white p-7 shadow-sm sm:p-9">
               <p className="text-sm leading-7 text-gray-600 sm:text-base">
-                Business class pricing can change frequently. Consider
-                searching multiple travel dates, departure times, and routes
-                when possible. Booking earlier may provide more choices, while
+                Business class pricing can change frequently. Consider searching
+                multiple travel dates, departure times, and routes when
+                possible. Booking earlier may provide more choices, while
                 flexible travel dates can help you compare a wider range of
                 fares.
               </p>
@@ -291,9 +290,7 @@ function BusinessClassFlightDeals() {
             {destinations.map((destination) => (
               <a
                 key={destination}
-                href={`/destinations?search=${encodeURIComponent(
-                  destination
-                )}`}
+                href={`/destinations?search=${encodeURIComponent(destination)}`}
                 className="rounded-xl border border-gray-200 bg-white px-4 py-4 text-center text-sm font-bold text-dark shadow-sm transition hover:-translate-y-1 hover:border-primary hover:text-primary"
               >
                 ✈️ {destination}
@@ -380,15 +377,16 @@ function BusinessClassFlightDeals() {
               <h3 className="mt-5 text-xl font-black text-dark">By Phone</h3>
 
               <p className="mt-3 text-sm leading-7 text-gray-600">
-                Call (855) 750-2746 for assistance exploring business class
-                options, schedules, and applicable fare choices.
+                Call {formatPhoneNumber(appData.phoneNumber)} for assistance
+                exploring business class options, schedules, and applicable fare
+                choices.
               </p>
 
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="mt-5 inline-block font-bold text-primary hover:underline"
               >
-                Call (855) 750-2746 →
+                Call {formatPhoneNumber(appData.phoneNumber)} →
               </a>
             </div>
           </div>
@@ -411,9 +409,9 @@ function BusinessClassFlightDeals() {
 
               <p className="text-sm leading-7 text-gray-600 sm:text-base">
                 FinoTravels provides a convenient way to explore business class
-                airfare for domestic and international travel. Compare
-                available itineraries, review different schedules, and choose
-                an option that suits your journey.
+                airfare for domestic and international travel. Compare available
+                itineraries, review different schedules, and choose an option
+                that suits your journey.
               </p>
             </div>
           </div>
@@ -482,8 +480,8 @@ function BusinessClassFlightDeals() {
               </h2>
 
               <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-white/80">
-                Compare available business class itineraries and find an
-                option that suits your travel plans.
+                Compare available business class itineraries and find an option
+                that suits your travel plans.
               </p>
 
               <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row">
@@ -495,10 +493,10 @@ function BusinessClassFlightDeals() {
                 </a>
 
                 <a
-                  href="tel:+18557502746"
+                  href={`tel:+${appData.phoneNumber}`}
                   className="rounded-lg border border-white/40 bg-white/10 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/20"
                 >
-                  ☎ (855) 750-2746
+                  ☎ {formatPhoneNumber(appData.phoneNumber)}
                 </a>
               </div>
             </div>

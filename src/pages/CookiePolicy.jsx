@@ -1,3 +1,6 @@
+import { appData } from "../data";
+import { formatPhoneNumber } from "../utils/helper";
+
 function CookiePolicy() {
   const List = ({ items }) => (
     <ul className="mt-4 space-y-2">
@@ -28,9 +31,7 @@ function CookiePolicy() {
             FinoTravels
           </p>
 
-          <h1 className="text-4xl font-black md:text-5xl">
-            Cookie Policy
-          </h1>
+          <h1 className="text-4xl font-black md:text-5xl">Cookie Policy</h1>
 
           <p className="mt-4 max-w-3xl text-sm leading-7 text-white/80 md:text-base">
             Learn how FinoTravels uses cookies and related technologies to
@@ -70,13 +71,13 @@ function CookiePolicy() {
             <Section number="1" title="Understanding Cookies">
               <p className="mt-4 text-gray-600">
                 Cookies are small data files that websites may place on your
-                computer, smartphone, tablet, or other internet-connected
-                device when you visit a website.
+                computer, smartphone, tablet, or other internet-connected device
+                when you visit a website.
               </p>
 
               <p className="mt-4 text-gray-600">
-                They allow a website to recognize a particular browser or
-                device and can help remember information about your visit.
+                They allow a website to recognize a particular browser or device
+                and can help remember information about your visit.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -182,9 +183,7 @@ function CookiePolicy() {
                 browsing session ends or the browser is closed.
               </p>
 
-              <p className="mt-4 text-gray-600">
-                They may be used to support:
-              </p>
+              <p className="mt-4 text-gray-600">They may be used to support:</p>
 
               <List
                 items={[
@@ -200,8 +199,8 @@ function CookiePolicy() {
               </h3>
 
               <p className="mt-4 text-gray-600">
-                Persistent cookies remain on your device for a defined period
-                or until they are removed manually.
+                Persistent cookies remain on your device for a defined period or
+                until they are removed manually.
               </p>
 
               <p className="mt-4 text-gray-600">They may help us:</p>
@@ -335,13 +334,13 @@ function CookiePolicy() {
               </p>
 
               <p className="mt-4 text-gray-600">
-                These technologies may support functions such as content
-                sharing or interaction with third-party platforms.
+                These technologies may support functions such as content sharing
+                or interaction with third-party platforms.
               </p>
 
               <p className="mt-4 text-gray-600">
-                Their use is governed by the privacy and cookie practices of
-                the applicable third-party provider.
+                Their use is governed by the privacy and cookie practices of the
+                applicable third-party provider.
               </p>
             </Section>
 
@@ -471,8 +470,8 @@ function CookiePolicy() {
             <Section number="9" title="Changes to This Cookie Policy">
               <p className="mt-4 text-gray-600">
                 TravelFirst LLC may revise this Cookie Policy when our website,
-                technology, business practices, or applicable legal
-                requirements change.
+                technology, business practices, or applicable legal requirements
+                change.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -508,20 +507,20 @@ function CookiePolicy() {
                 <div>
                   <p className="text-sm font-bold text-primary">Email</p>
                   <a
-                    href="mailto:contact@finotravels.com"
+                    href={`mailto:${appData.email}`}
                     className="mt-1 inline-block text-sm text-white/80 transition hover:text-white"
                   >
-                    contact@finotravels.com
+                    {appData.email}
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold text-primary">Phone</p>
                   <a
-                    href="tel:+18557502746"
+                    href={`tel:+${appData.phoneNumber}`}
                     className="mt-1 inline-block text-sm font-semibold text-white transition hover:text-primary"
                   >
-                    ☎ (855) 750-2746
+                    ☎ {formatPhoneNumber(appData.phoneNumber)}
                   </a>
                 </div>
               </div>

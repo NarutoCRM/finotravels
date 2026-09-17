@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { formatPhoneNumber } from "../utils/helper";
+import { appData } from "../data";
 
 const destinations = [
   "New York",
@@ -52,8 +54,7 @@ const tripTypes = [
 const faqs = [
   {
     question: "How can I book a first class flight with FinoTravels?",
-    answer:
-      "Search online or call (855) 750-2746 for assistance with available first class options.",
+    answer: `Search online or call ${appData.phoneNumber} for assistance with available first class options.`,
   },
   {
     question: "Can I find first class flight deals with FinoTravels?",
@@ -86,9 +87,7 @@ function SectionTitle({ eyebrow, title, description }) {
         </p>
       )}
 
-      <h2 className="text-2xl font-black text-dark sm:text-3xl">
-        {title}
-      </h2>
+      <h2 className="text-2xl font-black text-dark sm:text-3xl">{title}</h2>
 
       {description && (
         <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
@@ -124,8 +123,8 @@ function FirstClassFlightDeals() {
               </h1>
 
               <p className="mx-auto mt-4 max-w-3xl text-sm leading-7 text-white/90 sm:text-base">
-                Enjoy a More Comfortable Way To Fly. Explore first class
-                flight options for domestic and international journeys with
+                Enjoy a More Comfortable Way To Fly. Explore first class flight
+                options for domestic and international journeys with
                 FinoTravels.
               </p>
 
@@ -138,10 +137,10 @@ function FirstClassFlightDeals() {
                 </a>
 
                 <a
-                  href="tel:+18557502746"
+                  href={`tel:+${appData.phoneNumber}`}
                   className="rounded-lg border border-white bg-white/10 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/20"
                 >
-                  ☎ Call (855) 750-2746
+                  ☎ Call {formatPhoneNumber(appData.phoneNumber)}
                 </a>
               </div>
             </div>
@@ -166,10 +165,10 @@ function FirstClassFlightDeals() {
             <p className="mt-3 text-sm leading-7 text-gray-600 sm:text-base">
               First class fares can vary based on the airline, route, travel
               dates, availability, and cabin benefits included with the ticket.
-              Comparing different options can help you find a flight that
-              fits your schedule and travel preferences. FinoTravels makes it
-              easier to review available first class options before completing
-              your reservation.
+              Comparing different options can help you find a flight that fits
+              your schedule and travel preferences. FinoTravels makes it easier
+              to review available first class options before completing your
+              reservation.
             </p>
           </div>
         </div>
@@ -247,9 +246,7 @@ function FirstClassFlightDeals() {
             {destinations.map((destination) => (
               <a
                 key={destination}
-                href={`/destinations?search=${encodeURIComponent(
-                  destination
-                )}`}
+                href={`/destinations?search=${encodeURIComponent(destination)}`}
                 className="rounded-xl border border-white bg-white px-4 py-4 text-center text-sm font-bold text-dark shadow-sm transition hover:-translate-y-1 hover:text-primary"
               >
                 ✈️ {destination}
@@ -340,15 +337,16 @@ function FirstClassFlightDeals() {
               </h3>
 
               <p className="mt-3 text-sm leading-7 text-gray-600">
-                Prefer personal assistance? Call (855) 750-2746 to discuss
-                available first class flight options and booking details.
+                Prefer personal assistance? Call{" "}
+                {formatPhoneNumber(appData.phoneNumber)}6 to discuss available
+                first class flight options and booking details.
               </p>
 
               <a
-                href="tel:+18557502746"
+                href={`tel:+${appData.phoneNumber}`}
                 className="mt-5 inline-block font-bold text-primary hover:underline"
               >
-                Call (855) 750-2746 →
+                Call {formatPhoneNumber(appData.phoneNumber)} →
               </a>
             </div>
           </div>
@@ -457,10 +455,10 @@ function FirstClassFlightDeals() {
                 </a>
 
                 <a
-                  href="tel:+18557502746"
+                  href={`tel:+${appData.phoneNumber}`}
                   className="rounded-lg border border-white/40 bg-white/10 px-7 py-3 text-sm font-bold text-white transition hover:bg-white/20"
                 >
-                  ☎ (855) 750-2746
+                  ☎ {formatPhoneNumber(appData.phoneNumber)}
                 </a>
               </div>
             </div>

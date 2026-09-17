@@ -1,3 +1,6 @@
+import { appData } from "../data";
+import { formatPhoneNumber } from "../utils/helper";
+
 function CancellationRefund() {
   const List = ({ items }) => (
     <ul className="mt-4 space-y-2">
@@ -68,14 +71,11 @@ function CancellationRefund() {
             </div>
 
             {/* 1 */}
-            <Section
-              number="1"
-              title="Understanding Cancellation Conditions"
-            >
+            <Section number="1" title="Understanding Cancellation Conditions">
               <p className="mt-4 text-gray-600">
                 Cancellation terms are generally determined by the airline or
-                travel supplier associated with your reservation. The
-                applicable conditions may depend on:
+                travel supplier associated with your reservation. The applicable
+                conditions may depend on:
               </p>
 
               <List
@@ -203,8 +203,8 @@ function CancellationRefund() {
               />
 
               <p className="mt-4 text-gray-600">
-                Customers should not assume that every reservation
-                automatically qualifies for a penalty-free 24-hour cancellation.
+                Customers should not assume that every reservation automatically
+                qualifies for a penalty-free 24-hour cancellation.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -243,10 +243,7 @@ function CancellationRefund() {
             </Section>
 
             {/* 5 */}
-            <Section
-              number="5"
-              title="Conditions That May Affect Cancellation"
-            >
+            <Section number="5" title="Conditions That May Affect Cancellation">
               <p className="mt-4 text-gray-600">
                 Several circumstances can influence the amount refunded or the
                 charges associated with a cancellation.
@@ -276,8 +273,8 @@ function CancellationRefund() {
               <p className="mt-4 text-gray-600">
                 FinoTravels can assist eligible customers with the refund
                 request process. However, the airline or applicable travel
-                supplier generally determines whether a refund is permitted
-                and how much may be returned.
+                supplier generally determines whether a refund is permitted and
+                how much may be returned.
               </p>
 
               <h3 className="mt-7 text-xl font-bold text-dark">
@@ -351,9 +348,7 @@ function CancellationRefund() {
                 through the original payment method used for the reservation.
               </p>
 
-              <p className="mt-4 text-gray-600">
-                Examples may include:
-              </p>
+              <p className="mt-4 text-gray-600">Examples may include:</p>
 
               <List
                 items={[
@@ -430,9 +425,8 @@ function CancellationRefund() {
               </p>
 
               <p className="mt-4 text-gray-600">
-                We therefore cannot guarantee that a requested cancellation
-                will be approved or that a particular refund amount will be
-                issued.
+                We therefore cannot guarantee that a requested cancellation will
+                be approved or that a particular refund amount will be issued.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -469,14 +463,12 @@ function CancellationRefund() {
 
             {/* 11 Contact */}
             <section className="rounded-2xl bg-dark p-7 text-white md:p-9">
-              <h2 className="text-2xl font-bold">
-                11. Contact FinoTravels
-              </h2>
+              <h2 className="text-2xl font-bold">11. Contact FinoTravels</h2>
 
               <p className="mt-4 leading-7 text-white/80">
-                For assistance with a cancellation, refund request, or
-                questions about the terms applicable to your reservation,
-                please contact us:
+                For assistance with a cancellation, refund request, or questions
+                about the terms applicable to your reservation, please contact
+                us:
               </p>
 
               <div className="mt-6 space-y-5">
@@ -491,20 +483,20 @@ function CancellationRefund() {
                 <div>
                   <p className="text-sm font-bold text-primary">Email</p>
                   <a
-                    href="mailto:contact@finotravels.com"
+                    href={`mailto:${appData.email}`}
                     className="mt-1 inline-block text-sm text-white/80 transition hover:text-white"
                   >
-                    contact@finotravels.com
+                    {appData.email}
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold text-primary">Phone</p>
                   <a
-                    href="tel:+18557502746"
+                    href={`tel:+${appData.phoneNumber}`}
                     className="mt-1 inline-block text-sm font-semibold text-white transition hover:text-primary"
                   >
-                    ☎ (855) 750-2746
+                    ☎ {formatPhoneNumber(appData.phoneNumber)}
                   </a>
                 </div>
               </div>

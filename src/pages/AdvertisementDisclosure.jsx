@@ -1,3 +1,6 @@
+import { appData } from "../data";
+import { formatPhoneNumber } from "../utils/helper";
+
 function AdvertisementDisclosure() {
   const List = ({ items }) => (
     <ul className="mt-4 space-y-2">
@@ -48,15 +51,15 @@ function AdvertisementDisclosure() {
               <p className="text-sm leading-7 text-gray-700 md:text-base">
                 At FinoTravels, operated by TravelFirst LLC, we value
                 transparency in how advertising and promotional material is
-                presented on our website. This Advertisement Disclosure
-                explains the types of advertising, sponsored material,
-                affiliate relationships, and third-party promotions that may
-                appear across our platform.
+                presented on our website. This Advertisement Disclosure explains
+                the types of advertising, sponsored material, affiliate
+                relationships, and third-party promotions that may appear across
+                our platform.
               </p>
 
               <p className="mt-4 text-sm leading-7 text-gray-700 md:text-base">
-                By accessing or using FinoTravels, you acknowledge the
-                practices described in this disclosure.
+                By accessing or using FinoTravels, you acknowledge the practices
+                described in this disclosure.
               </p>
             </div>
 
@@ -65,13 +68,12 @@ function AdvertisementDisclosure() {
               <p className="mt-4 text-gray-600">
                 FinoTravels may feature advertisements, sponsored placements,
                 promotional messages, or travel-related offers from independent
-                companies, advertisers, affiliates, and other business
-                partners.
+                companies, advertisers, affiliates, and other business partners.
               </p>
 
               <p className="mt-4 text-gray-600">
-                Depending on the website and available campaigns,
-                advertisements may relate to:
+                Depending on the website and available campaigns, advertisements
+                may relate to:
               </p>
 
               <List
@@ -87,10 +89,10 @@ function AdvertisementDisclosure() {
 
               <p className="mt-4 text-gray-600">
                 An advertisement appearing on FinoTravels should not
-                automatically be interpreted as an endorsement or
-                recommendation by TravelFirst LLC. The display of an
-                advertisement does not guarantee the quality, availability,
-                pricing, or performance of the advertised product or service.
+                automatically be interpreted as an endorsement or recommendation
+                by TravelFirst LLC. The display of an advertisement does not
+                guarantee the quality, availability, pricing, or performance of
+                the advertised product or service.
               </p>
             </Section>
 
@@ -118,10 +120,10 @@ function AdvertisementDisclosure() {
               />
 
               <p className="mt-4 text-gray-600">
-                Third-party advertising companies may maintain their own
-                privacy policies and data practices. Users should review the
-                applicable policies of these companies before interacting with
-                their websites, advertisements, or services.
+                Third-party advertising companies may maintain their own privacy
+                policies and data practices. Users should review the applicable
+                policies of these companies before interacting with their
+                websites, advertisements, or services.
               </p>
             </Section>
 
@@ -134,9 +136,9 @@ function AdvertisementDisclosure() {
 
               <p className="mt-4 text-gray-600">
                 Where an affiliate relationship exists, TravelFirst LLC may
-                receive compensation when a visitor clicks on a qualifying
-                link, submits an inquiry, or completes an eligible transaction
-                through a third-party provider.
+                receive compensation when a visitor clicks on a qualifying link,
+                submits an inquiry, or completes an eligible transaction through
+                a third-party provider.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -183,7 +185,10 @@ function AdvertisementDisclosure() {
             </Section>
 
             {/* 5 */}
-            <Section number="5" title="External Links and Third-Party Platforms">
+            <Section
+              number="5"
+              title="External Links and Third-Party Platforms"
+            >
               <p className="mt-4 text-gray-600">
                 Advertisements and promotional material on FinoTravels may
                 direct users to websites operated by independent third parties.
@@ -218,9 +223,9 @@ function AdvertisementDisclosure() {
             {/* 6 */}
             <Section number="6" title="No Implied Endorsement">
               <p className="mt-4 text-gray-600">
-                The presence of an advertisement, sponsored placement,
-                affiliate link, or promotional offer on FinoTravels does not
-                mean that TravelFirst LLC:
+                The presence of an advertisement, sponsored placement, affiliate
+                link, or promotional offer on FinoTravels does not mean that
+                TravelFirst LLC:
               </p>
 
               <List
@@ -234,8 +239,8 @@ function AdvertisementDisclosure() {
               />
 
               <p className="mt-4 text-gray-600">
-                Users are responsible for reviewing and verifying the details
-                of any offer before proceeding.
+                Users are responsible for reviewing and verifying the details of
+                any offer before proceeding.
               </p>
             </Section>
 
@@ -243,8 +248,8 @@ function AdvertisementDisclosure() {
             <Section number="7" title="Changes to This Disclosure">
               <p className="mt-4 text-gray-600">
                 TravelFirst LLC may revise this Advertisement Disclosure
-                periodically as our advertising relationships, website
-                features, technologies, or applicable requirements change.
+                periodically as our advertising relationships, website features,
+                technologies, or applicable requirements change.
               </p>
 
               <p className="mt-4 text-gray-600">
@@ -257,9 +262,7 @@ function AdvertisementDisclosure() {
 
             {/* 8 Contact */}
             <section className="rounded-2xl bg-dark p-7 text-white md:p-9">
-              <h2 className="text-2xl font-bold">
-                8. Contact Information
-              </h2>
+              <h2 className="text-2xl font-bold">8. Contact Information</h2>
 
               <p className="mt-4 leading-7 text-white/80">
                 If you have questions or concerns about advertising, affiliate
@@ -279,20 +282,20 @@ function AdvertisementDisclosure() {
                 <div>
                   <p className="text-sm font-bold text-primary">Email</p>
                   <a
-                    href="mailto:contact@finotravels.com"
+                    href={`mailto:${appData.email}`}
                     className="mt-1 inline-block text-sm text-white/80 transition hover:text-white"
                   >
-                    contact@finotravels.com
+                    {appData.email}
                   </a>
                 </div>
 
                 <div>
                   <p className="text-sm font-bold text-primary">Phone</p>
                   <a
-                    href="tel:+18557502746"
+                    href={`tel:+${appData.phoneNumber}`}
                     className="mt-1 inline-block text-sm font-semibold text-white transition hover:text-primary"
                   >
-                    ☎ (855) 750-2746
+                    ☎ {formatPhoneNumber(appData.phoneNumber)}
                   </a>
                 </div>
               </div>
