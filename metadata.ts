@@ -20,11 +20,20 @@ export function createPageMetadata(
       siteName,
       locale: "en_US",
       type: "website",
+      images: [
+        {
+          url: "/logo.png",
+          width: 1774,
+          height: 887,
+          alt: "FinoTravels travel logo",
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: brandedTitle,
       description,
+      images: ["/logo.png"],
     },
   };
 }

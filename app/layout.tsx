@@ -11,7 +11,6 @@ export const metadata: Metadata = {
   },
   description:
     "Explore flight options and get travel booking support from FinoTravels, operated by TravelFirst LLC.",
-  icons: { icon: "/favicon.svg" },
 };
 
 type RootLayoutProps = Readonly<{
