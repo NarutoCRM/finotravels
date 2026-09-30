@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { appData } from "../data";
 
 const faqs = [
@@ -29,8 +28,6 @@ const faqs = [
 ];
 
 function FAQ() {
-  const [open, setOpen] = useState(null);
-
   return (
     <section className="bg-white py-14 md:py-20">
       <div className="container-main">
@@ -51,33 +48,23 @@ function FAQ() {
           </div>
 
           <div className="space-y-3">
-            {faqs.map((faq, index) => {
-              const isOpen = open === index;
-
-              return (
-                <div
-                  key={faq.question}
-                  className="overflow-hidden rounded-xl border border-gray-200 bg-white"
-                >
-                  <button
-                    onClick={() => setOpen(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between px-5 py-4 text-left text-sm font-bold text-dark"
-                  >
-                    <span>{faq.question}</span>
-
-                    <span className="ml-4 text-lg text-primary">
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="border-t border-gray-100 px-5 py-4 text-sm leading-6 text-gray-600">
-                      {faq.answer}
-                    </div>
-                  )}
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="overflow-hidden rounded-xl border border-gray-200 bg-white"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between px-5 py-4 text-left text-sm font-bold text-dark [&::-webkit-details-marker]:hidden">
+                  <span>{faq.question}</span>
+                  <span
+                    aria-hidden="true"
+                    className="faq-toggle ml-4 text-lg text-primary"
+                  />
+                </summary>
+                <div className="border-t border-gray-100 px-5 py-4 text-sm leading-6 text-gray-600">
+                  {faq.answer}
                 </div>
-              );
-            })}
+              </details>
+            ))}
           </div>
         </div>
       </div>

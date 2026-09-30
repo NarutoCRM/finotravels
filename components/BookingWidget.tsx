@@ -1,10 +1,6 @@
-import { useState } from "react";
-
 const tabs = ["Tours"];
 
 function BookingWidget() {
-  const [active, setActive] = useState("Tours");
-
   return (
     <div className="w-full rounded-2xl bg-white p-3 shadow-xl sm:p-4">
       {/* Tabs */}
@@ -14,11 +10,7 @@ function BookingWidget() {
             <button
               key={tab}
               type="button"
-              onClick={() => setActive(tab)}
-              className={`flex items-center gap-1.5 rounded-lg px-4 py-2.5 text-xs font-bold transition sm:text-sm ${active === tab
-                ? "bg-primary text-white"
-                : "bg-gray-50 text-gray-600 hover:bg-light-blue"
-                }`}
+              className="flex items-center gap-1.5 rounded-lg bg-primary px-4 py-2.5 text-xs font-bold text-white transition sm:text-sm"
             >
               {tab === "Tours" && "✈"}
 
@@ -85,7 +77,7 @@ function BookingWidget() {
         {/* Search Button */}
         <button
           type="button"
-          className="min-h-[46px] w-full rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-dark md:min-w-[135px]"
+          className="min-h-11.5 w-full rounded-lg bg-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-dark md:min-w-33.75"
         >
           🔍 SEARCH
         </button>

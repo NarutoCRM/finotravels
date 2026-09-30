@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
@@ -10,8 +12,8 @@ function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
       <div className="container-main">
-        <div className="flex h-[72px] items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+        <div className="flex h-18 items-center justify-between">
+          <Link href="/" className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl text-white">
               ✈
             </div>
@@ -39,25 +41,25 @@ function Header() {
                 <div className="absolute left-0 top-9 w-44 rounded-xl border bg-white p-2 shadow-xl">
                   <Link
                     className="block rounded-lg px-4 py-2 hover:bg-light-blue"
-                    to="/flights"
+                    href="/flights"
                   >
                     Flights
                   </Link>
                   <Link
                     className="block rounded-lg px-4 py-2 hover:bg-light-blue"
-                    to="/hotels"
+                    href="/hotels"
                   >
                     Hotels
                   </Link>
                   <Link
                     className="block rounded-lg px-4 py-2 hover:bg-light-blue"
-                    to="/cruise"
+                    href="/cruise"
                   >
                     Cruise
                   </Link>
                   <Link
                     className="block rounded-lg px-4 py-2 hover:bg-light-blue"
-                    to="/car-rental"
+                    href="/car-rental"
                   >
                     Car
                   </Link>
@@ -66,28 +68,28 @@ function Header() {
             </div>
 
             <Link
-              to="/deals"
+              href="/deals"
               className="text-sm font-semibold hover:text-primary"
             >
               Deals
             </Link>
 
             <Link
-              to="/destinations"
+              href="/destinations"
               className="text-sm font-semibold hover:text-primary"
             >
               Destinations
             </Link>
 
             <Link
-              to="/about"
+              href="/about"
               className="text-sm font-semibold hover:text-primary"
             >
               About
             </Link>
 
             <Link
-              to="/contact"
+              href="/contact"
               className="text-sm font-semibold hover:text-primary"
             >
               Contact Us
@@ -114,28 +116,28 @@ function Header() {
             <div className="flex flex-col gap-1">
               <Link
                 onClick={() => setMenu(false)}
-                to="/deals"
+                href="/deals"
                 className="rounded-lg px-4 py-3"
               >
                 Deals
               </Link>
               <Link
                 onClick={() => setMenu(false)}
-                to="/destinations"
+                href="/destinations"
                 className="rounded-lg px-4 py-3"
               >
                 Destinations
               </Link>
               <Link
                 onClick={() => setMenu(false)}
-                to="/about"
+                href="/about"
                 className="rounded-lg px-4 py-3"
               >
                 About
               </Link>
               <Link
                 onClick={() => setMenu(false)}
-                to="/contact"
+                href="/contact"
                 className="rounded-lg px-4 py-3"
               >
                 Contact Us

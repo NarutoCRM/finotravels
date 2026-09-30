@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#075b79]">
       <div
-        className="relative min-h-[50px] bg-cover bg-center sm:min-h-[520px] md:min-h-[450px]"
+        className="relative min-h-12.5 bg-cover bg-center sm:min-h-130 md:min-h-112.5"
         style={{
           backgroundImage:
             "linear-gradient(rgba(0,45,65,.50),rgba(0,45,65,.50)), url('/images/hero-travel.jpg')",
@@ -14,7 +14,7 @@ function Hero() {
       >
         <div className="container-main">
           {/* Hero Content */}
-          <div className="flex min-h-[430px] flex-col items-center justify-center px-2 pb-10  text-center text-white sm:min-h-[430px] sm:pb-16 md:min-h-[500px]">
+          <div className="flex min-h-107.5 flex-col items-center justify-center px-2 pb-10 text-center text-white sm:min-h-107.5 sm:pb-16 md:min-h-125">
             <h1 className="max-w-4xl text-3xl font-black leading-tight sm:text-4xl md:text-5xl">
               Ready to Start Your Journey?
             </h1>
@@ -48,10 +48,10 @@ function Hero() {
             className="
               relative z-20 mx-auto
               w-[calc(100%-8px)]
-              max-w-[1120px]
+              max-w-280
               sm:w-[calc(100%-16px)]
               md:absolute
-              md:bottom-[-5px]
+              md:-bottom-1.25
               md:left-1/2
               md:w-[calc(100%-24px)]
               md:-translate-x-1/2
@@ -63,7 +63,7 @@ function Hero() {
       </div>
 
       {/* Space below booking widget */}
-      <div className="hidden h-[100px] md:block" />
+      <div className="hidden h-25 md:block" />
       <div className="h-6 md:hidden" />
     </section>
   );

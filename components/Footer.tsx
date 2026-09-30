@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
@@ -10,7 +10,7 @@ function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company */}
           <div>
-            <Link to="/" className="inline-block">
+            <Link href="/" className="inline-block">
               <div className="text-2xl font-black tracking-tight">
                 Fino<span className="text-primary">Travels</span>
               </div>
@@ -37,26 +37,26 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link to="/flights" className="transition hover:text-primary">
+                <Link href="/flights" className="transition hover:text-primary">
                   Flights
                 </Link>
               </li>
 
               <li>
-                <Link to="/hotels" className="transition hover:text-primary">
+                <Link href="/hotels" className="transition hover:text-primary">
                   Hotels
                 </Link>
               </li>
 
               <li>
-                <Link to="/cruise" className="transition hover:text-primary">
+                <Link href="/cruise" className="transition hover:text-primary">
                   Cruise
                 </Link>
               </li>
 
               <li>
                 <Link
-                  to="/car-rental"
+                  href="/car-rental"
                   className="transition hover:text-primary"
                 >
                   Car Rental
@@ -65,7 +65,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/destinations"
+                  href="/destinations"
                   className="transition hover:text-primary"
                 >
                   Destinations
@@ -80,14 +80,14 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link to="/deals" className="transition hover:text-primary">
+                <Link href="/deals" className="transition hover:text-primary">
                   All Deals
                 </Link>
               </li>
 
               <li>
                 <Link
-                  to="/domestic-flight-deals"
+                  href="/domestic-flight-deals"
                   className="transition hover:text-primary"
                 >
                   Domestic Flight Deals
@@ -96,7 +96,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/international-flight-deals"
+                  href="/international-flight-deals"
                   className="transition hover:text-primary"
                 >
                   International Flight Deals
@@ -105,7 +105,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/first-class-flight-deals"
+                  href="/first-class-flight-deals"
                   className="transition hover:text-primary"
                 >
                   First Class Flight Deals
@@ -114,7 +114,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/business-class-flight-deals"
+                  href="/business-class-flight-deals"
                   className="transition hover:text-primary"
                 >
                   Business Class Flight Deals
@@ -123,7 +123,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/last-minute-flight-deals"
+                  href="/last-minute-flight-deals"
                   className="transition hover:text-primary"
                 >
                   Last-Minute Flight Deals
@@ -138,20 +138,20 @@ function Footer() {
 
             <ul className="mt-5 space-y-3 text-sm text-white/70">
               <li>
-                <Link to="/about" className="transition hover:text-primary">
+                <Link href="/about" className="transition hover:text-primary">
                   About Us
                 </Link>
               </li>
 
               <li>
-                <Link to="/contact" className="transition hover:text-primary">
+                <Link href="/contact" className="transition hover:text-primary">
                   Contact Us
                 </Link>
               </li>
 
               <li>
                 <Link
-                  to="/privacy-policy"
+                  href="/privacy-policy"
                   className="transition hover:text-primary"
                 >
                   Privacy Policy
@@ -160,7 +160,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/terms-conditions"
+                  href="/terms-conditions"
                   className="transition hover:text-primary"
                 >
                   Terms & Conditions
@@ -169,7 +169,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/cancellation-refund"
+                  href="/cancellation-refund"
                   className="transition hover:text-primary"
                 >
                   Cancellation & Refund
@@ -178,7 +178,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/advertisement-disclosure"
+                  href="/advertisement-disclosure"
                   className="transition hover:text-primary"
                 >
                   Advertisement Disclosure
@@ -187,7 +187,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/cookie-policy"
+                  href="/cookie-policy"
                   className="transition hover:text-primary"
                 >
                   Cookie Policy
@@ -196,7 +196,7 @@ function Footer() {
 
               <li>
                 <Link
-                  to="/disclaimer"
+                  href="/disclaimer"
                   className="transition hover:text-primary"
                 >
                   Disclaimer
@@ -273,24 +273,24 @@ function Footer() {
 
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-xs text-white/50">
             <Link
-              to="/privacy-policy"
+              href="/privacy-policy"
               className="transition hover:text-primary"
             >
               Privacy
             </Link>
 
             <Link
-              to="/terms-conditions"
+              href="/terms-conditions"
               className="transition hover:text-primary"
             >
               Terms
             </Link>
 
-            <Link to="/cookie-policy" className="transition hover:text-primary">
+            <Link href="/cookie-policy" className="transition hover:text-primary">
               Cookies
             </Link>
 
-            <Link to="/disclaimer" className="transition hover:text-primary">
+            <Link href="/disclaimer" className="transition hover:text-primary">
               Disclaimer
             </Link>
           </div>
