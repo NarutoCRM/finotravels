@@ -2,7 +2,7 @@ import { appData } from "../data";
 import { formatPhoneNumber } from "../utils/helper";
 
 function AdvertisementDisclosure() {
-  const List = ({ items }) => (
+  const List = ({ items }: { items: string[] }) => (
     <ul className="mt-4 space-y-2">
       {items.map((item) => (
         <li key={item} className="flex gap-3 text-gray-600">
@@ -13,7 +13,7 @@ function AdvertisementDisclosure() {
     </ul>
   );
 
-  const Section = ({ number, title, children }) => (
+  const Section = ({ number, title, children }: { number: string; title: string; children: React.ReactNode }) => (
     <section className="mb-10">
       <h2 className="text-2xl font-bold text-dark">
         {number}. {title}

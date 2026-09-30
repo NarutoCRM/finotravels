@@ -1,4 +1,4 @@
-import { useState } from "react";
+import FAQAccordion from "../components/FAQAccordion";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
@@ -85,7 +85,13 @@ const faqs = [
   },
 ];
 
-function SectionTitle({ eyebrow, title, description }) {
+type SectionTitleProps = {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+};
+
+function SectionTitle({ eyebrow, title, description = "" }: SectionTitleProps) {
   return (
     <div className="mx-auto mb-10 max-w-3xl text-center">
       {eyebrow && (
@@ -106,20 +112,18 @@ function SectionTitle({ eyebrow, title, description }) {
 }
 
 function BusinessClassFlightDeals() {
-  const [openFaq, setOpenFaq] = useState(null);
-
   return (
     <div className="bg-white">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div
-          className="relative min-h-[430px] bg-cover bg-center"
+          className="relative min-h-107.5 bg-cover bg-center"
           style={{
             backgroundImage:
               "linear-gradient(rgba(0,28,66,.70),rgba(0,28,66,.70)), url('/images/hero-travel.jpg')",
           }}
         >
-          <div className="container-main flex min-h-[430px] items-center justify-center py-16 text-center text-white">
+          <div className="container-main flex min-h-107.5 items-center justify-center py-16 text-center text-white">
             <div className="max-w-4xl">
               <span className="inline-flex rounded-full bg-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider backdrop-blur-sm">
                 Premium Travel
@@ -428,38 +432,7 @@ function BusinessClassFlightDeals() {
           />
 
           <div className="mx-auto max-w-4xl space-y-3">
-            {faqs.map((faq, index) => {
-              const isOpen = openFaq === index;
-
-              return (
-                <div
-                  key={faq.question}
-                  className="overflow-hidden rounded-xl border border-gray-200 bg-white"
-                >
-                  <button
-                    type="button"
-                    onClick={() => setOpenFaq(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
-                  >
-                    <span className="text-sm font-bold text-dark sm:text-base">
-                      {index + 1}. {faq.question}
-                    </span>
-
-                    <span className="shrink-0 text-xl font-bold text-primary">
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {isOpen && (
-                    <div className="border-t border-gray-100 px-5 py-4">
-                      <p className="text-sm leading-7 text-gray-600">
-                        {faq.answer}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
+            <FAQAccordion faqs={faqs} numbered />
           </div>
         </div>
       </section>
