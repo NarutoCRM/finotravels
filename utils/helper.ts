@@ -1,4 +1,4 @@
-function formatPhoneNumber(phoneNumber) {
+function formatPhoneNumber(phoneNumber: string | number) {
   // Remove any non-digit characters from the phone number
   const cleaned = ('' + phoneNumber).replace(/\D/g, '');
   // Format the phone number as (XXX) XXX-XXXX
