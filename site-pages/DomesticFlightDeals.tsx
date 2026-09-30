@@ -1,10 +1,8 @@
-import { useState } from "react";
+import FAQAccordion from "../components/FAQAccordion";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
 function DomesticFlightDeals() {
-  const [openFaq, setOpenFaq] = useState(null);
-
   const faqs = [
     {
       question: "How Can I Find Affordable Domestic Flights?",
@@ -496,38 +494,7 @@ function DomesticFlightDeals() {
             </div>
 
             <div className="mt-10 space-y-3">
-              {faqs.map((faq, index) => {
-                const isOpen = openFaq === index;
-
-                return (
-                  <div
-                    key={faq.question}
-                    className="overflow-hidden rounded-xl bg-white shadow-sm"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(isOpen ? null : index)}
-                      className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left"
-                    >
-                      <span className="font-bold text-dark">
-                        {index + 1}. {faq.question}
-                      </span>
-
-                      <span className="shrink-0 text-xl font-bold text-primary">
-                        {isOpen ? "−" : "+"}
-                      </span>
-                    </button>
-
-                    {isOpen && (
-                      <div className="border-t border-gray-100 px-5 pb-5 pt-4">
-                        <p className="text-sm leading-7 text-gray-600">
-                          {faq.answer}
-                        </p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+              <FAQAccordion faqs={faqs} numbered variant="shadow" />
             </div>
           </div>
         </div>
