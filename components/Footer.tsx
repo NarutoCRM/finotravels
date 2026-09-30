@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
@@ -11,9 +12,13 @@ function Footer() {
           {/* Company */}
           <div>
             <Link href="/" className="inline-block">
-              <div className="text-2xl font-black tracking-tight">
-                Fino<span className="text-primary">Travels</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="FinoTravels"
+                width={190}
+                height={95}
+                className="h-12 w-[190px] object-cover object-center"
+              />
             </Link>
 
             <p className="mt-4 max-w-xs text-sm leading-7 text-white/70">
@@ -286,7 +291,10 @@ function Footer() {
               Terms
             </Link>
 
-            <Link href="/cookie-policy" className="transition hover:text-primary">
+            <Link
+              href="/cookie-policy"
+              className="transition hover:text-primary"
+            >
               Cookies
             </Link>
 

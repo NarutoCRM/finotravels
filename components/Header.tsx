@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { formatPhoneNumber } from "../utils/helper";
 import { appData } from "../data";
 
@@ -14,18 +15,14 @@ function Header() {
       <div className="container-main">
         <div className="flex h-18 items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-xl text-white">
-              ✈
-            </div>
-
-            <div>
-              <div className="text-xl font-extrabold text-dark">
-                Fino<span className="text-primary">Travels</span>
-              </div>
-              <div className="text-[9px] uppercase tracking-widest text-gray-400">
-                Travel With Confidence
-              </div>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="FinoTravels"
+              width={210}
+              height={105}
+              priority
+              className="h-14 w-[210px] object-cover object-center"
+            />
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex">
