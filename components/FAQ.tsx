@@ -42,7 +42,7 @@ function FAQ() {
             </h2>
 
             <p className="mt-3 text-sm text-gray-500">
-              We're committed to offering more than just products— we provide
+              We're committed to offering more than just products we provide
               exceptional experiences.
             </p>
           </div>
