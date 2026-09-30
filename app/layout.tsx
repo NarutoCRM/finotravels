@@ -4,7 +4,11 @@ import Footer from "@/components/Footer";
 import "./index.css";
 
 export const metadata: Metadata = {
-  title: "FinoTravels | Flight Options and Travel Support",
+  metadataBase: new URL("https://finotravels.com"),
+  title: {
+    default: "FinoTravels",
+    template: "%s | FinoTravels",
+  },
   description:
     "Explore flight options and get travel booking support from FinoTravels, operated by TravelFirst LLC.",
   icons: { icon: "/favicon.svg" },
