@@ -401,7 +401,7 @@ function About() {
 
 /* Small Components */
 
-function SectionLabel({ text }) {
+function SectionLabel({ text }: { text: string }) {
   return (
     <p className="text-xs font-extrabold uppercase tracking-[2px] text-primary">
       {text}
@@ -409,7 +409,7 @@ function SectionLabel({ text }) {
   );
 }
 
-function HelpCard({ text }) {
+function HelpCard({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-4 rounded-xl border border-gray-100 bg-white p-5 shadow-sm">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-light-blue font-bold text-primary">
