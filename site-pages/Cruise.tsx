@@ -1,3 +1,5 @@
+import { appData } from "../data";
+
 function Cruise() {
   return (
     <section className="section-padding">

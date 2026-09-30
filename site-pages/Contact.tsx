@@ -91,7 +91,7 @@ function Contact() {
             />
 
             <textarea
-              rows="6"
+              rows={6}
               placeholder="How can we help you?"
               className="mt-5 w-full resize-none rounded-xl border border-gray-200 px-4 py-4 outline-none focus:border-primary"
             />
